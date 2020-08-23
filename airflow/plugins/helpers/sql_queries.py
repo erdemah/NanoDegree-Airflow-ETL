@@ -41,4 +41,27 @@ class SqlQueries:
         FROM songplays
     """)
     
+    test_pk_songplays = """
+    select count(*) from public.songplays 
+    where playid is null
+    """
+    test_pk_songs = """
+    select count(*) from public.songs
+    where songid is null
+    """
+    test_pk_artists = """
+    select count(*) from public.artists
+    where artistid is null
+    """
+    test_pk_users = """
+    select count(*) from public.users
+    where userid is null
+    """
+    test_pk_time = """
+    select count(*) from public.time_table
+    where start_time is null
+    """
+    
+    test_list = [test_pk_songplays, test_pk_songs, test_pk_artists, test_pk_users, test_pk_time]
+    result = [0,0,0,0,0]
     

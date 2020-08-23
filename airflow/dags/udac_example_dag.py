@@ -115,6 +115,8 @@ run_quality_checks = DataQualityOperator(
     task_id='Run_data_quality_checks',
     dag=dag,
     redshift_conn_id="redshift",
+    test=SqlQueries.test_list,
+    result=SqlQueries.result
 )
 
 end_operator = DummyOperator(task_id='Stop_execution',  dag=dag)
